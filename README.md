@@ -1,19 +1,27 @@
-1. Mô tả thuật toán AES (Advanced Encryption Standard)
-Nguyên lý hoạt động:
-AES là một thuật toán mã hóa khối đối xứng (symmetric block cipher), tức là cùng một khóa được dùng cho cả mã hóa và giải mã.
+1. Giới thiệu
 
-Dữ liệu được chia thành từng khối 128-bit, sau đó được xử lý qua nhiều vòng (round) chuyển đổi.
+    AES Encrypt WebApp cung cấp giao diện thân thiện để người dùng nhập văn bản và khóa bí mật, sau đó thực hiện mã hóa hoặc giải mã dữ liệu. Ứng dụng sử dụng thuật toán AES ở chế độ CBC (Cipher Block Chaining) để đảm bảo tính bảo mật và toàn vẹn của dữ liệu.
 
-Mã hóa:
+3. Chức năng cơ bản
 
-Dữ liệu đầu vào được thêm padding để chia khối đủ 16 byte (AES block size).
+  Mã hóa văn bản: Nhập văn bản và khóa để nhận được chuỗi mã hóa.
 
-Dùng AES.new(..., AES.MODE_CBC, iv) để mã hóa bằng chế độ CBC.
+  Giải mã văn bản: Nhập chuỗi mã hóa và khóa để khôi phục văn bản gốc.
 
-Giải mã:
+  Giao diện người dùng trực quan: Dễ dàng sử dụng với hướng dẫn rõ ràng.
 
-Ngược lại với mã hóa: giải mã xong sẽ unpad() để loại bỏ phần đệm.
+Hiển thị kết quả: Kết quả mã hóa và giải mã được hiển thị ngay trên giao diện.
 
+3. Kỹ thuật và công nghệ sử dụng
+Ngôn ngữ lập trình: Python
+
+Framework backend: Flask
+
+Thư viện mã hóa: PyCryptodome (cho thuật toán AES)
+
+Giao diện người dùng: HTML, CSS, JavaScript
+
+Chế độ mã hóa: AES-CBC với padding và unpadding để xử lý dữ liệu không đủ khối
 
 2. Mô tả giao diện web (Flask + HTML/CSS/JS)
 Giao diện mã hóa
